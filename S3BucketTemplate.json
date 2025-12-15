@@ -1,0 +1,24 @@
+{
+  "description": "Example for S3 Bucket created using AWS CLI",
+
+  "Resources" : {
+    "MyDocsBucket":{
+      "Type": "AWS::S3::Bucket",
+      "Properties" :{
+        "BucketName": "lovingkindness-bucket",
+        "Tags":{
+          "Key": "Environment",
+          "Value": "Development"
+        },
+        "AccessControl": "Private",
+        "BucketEncryption":{
+          "ServerSideEncryptionConfiguration":{
+            "ServerSideEncryptionByDefault":{
+              "SSEAlgorithm": "AES256"
+            }
+          }
+        }
+      }
+    }
+  }
+}  
