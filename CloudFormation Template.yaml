@@ -5,7 +5,7 @@ Resources:
   MaestroBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: k1-maestro
+      BucketName: k5-maestro
       Tags:
         - Key: Environment
           Value: Development
@@ -17,4 +17,5 @@ Resources:
       BucketEncryption:
         ServerSideEncryptionConfiguration:
           - ServerSideEncryptionByDefault:
+
               SSEAlgorithm: AES256
