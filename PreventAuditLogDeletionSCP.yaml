@@ -1,0 +1,10 @@
+Version: '2012-10-17'
+
+Description: Prevent Audit Log Deletion for all resources
+
+Statement:
+  Effect: 'Deny'
+  Action:
+      -cloudtrail: DeleteTrail
+      cloudtrail: StopLogging
+  Resource: '*'
