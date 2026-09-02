@@ -1,0 +1,27 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PreventOpenSSH",
+            "Effect":"Deny",
+            "Action":[
+                "ec2:AuthorizeSecurityGroupIngress",
+                "ec2:ModifySecurityGroupRules"
+            ],
+            "Resource":"*",
+            "Condition": {
+                "StringEquals":{
+                    "ec2:Region": "us-east-1"
+                },
+                "IpAddress":{
+                    "ec2:SecurityGroupIngressIpTRanges": ["0.0.0.0/0"]
+                },
+                "NumericEquals":{
+                    "ec2:SecurityGroupIngressToPort": 22
+                }
+            }
+        }
+    ],
+    "Description":"In us-east-1, deny creating or modifying security group rules that open SSH (port 22) to the entire internet (0.0.0.0/0)"
+}
+

@@ -1,0 +1,11 @@
+{
+  "Version":"2012-10-17",
+  "Statement":[
+    {
+      "Effect":"Deny",
+      "Action":"ec2:*",
+      "Resource":"*"
+    }
+  ],
+  "Description of Service":"Deny all EC2 actions on all resources."
+}
